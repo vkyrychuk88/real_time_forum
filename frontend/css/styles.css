@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #796fe9;
     margin: 0;
     padding: 0;
 }
@@ -40,7 +40,7 @@ h1,  p, input  {
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    background-color: #e4e6c8; /* Adjust background color as needed */
+    background-color: #f0d71c; /* Adjust background color as needed */
 }
 
 .content-box h1, .content-box p {

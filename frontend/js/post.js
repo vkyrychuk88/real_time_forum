@@ -1,6 +1,7 @@
 // frontend/js/post.js
 
 import { submitPost } from './api.js';
+import { render } from './navigation.js';
 
 export function setupPost() {
     const form = document.getElementById('post-form');
@@ -19,6 +20,7 @@ export function setupPost() {
                 console.error('Error submitting post:', error);
             });
     });
+    
 }
 
 export function displayPosts(posts) {

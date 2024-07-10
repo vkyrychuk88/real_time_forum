@@ -5,12 +5,12 @@
 package db
 
 import (
-    "database/sql"
-    "log"
+	"database/sql"
+	"log"
 )
 
 func InitDB(db *sql.DB) {
-    query := `
+	query := `
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nickname TEXT NOT NULL,
@@ -24,20 +24,15 @@ func InitDB(db *sql.DB) {
     CREATE TABLE IF NOT EXISTS posts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         userId INTEGER NOT NULL,
+        nickname TEXT NOT NULL,
         title TEXT NOT NULL,
         content TEXT NOT NULL,
         createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY(userId) REFERENCES users(id)
     );
     `
-    _, err := db.Exec(query)
-    if err != nil {
-        log.Fatal("Error initializing database:", err)
-    }
+	_, err := db.Exec(query)
+	if err != nil {
+		log.Fatal("Error initializing database:", err)
+	}
 }
-
-
-
-
-
-

@@ -23,11 +23,27 @@ function loadPageContent(page) {
     
     console.log('esli true to zalogineni:', isLoggedIn);
 
+    const user = {
+        username: "User's_Username:_Volodymyr",
+        nickname: "User's_Nickname:_VOLODYMYR",
+    };
+
     if (page === 'home') {
         if (isLoggedIn) {
             fetchPosts()
                 .then(posts => {
                     app.innerHTML = `
+        <header class="topnav">
+        <div class="logo">
+             <h1>Welcome to the Real-TIME-Forum</h1>
+        </div>
+        <div class="user-actions">
+                 <span class="username">Hello, ${posts[1].nickname} - ${user.username}-${user.nickname} {{.User.Username}}-{{.users.Nickname}}</span>
+                 <a href="#" data-nav="post" class="button">Create Post</a>
+                 <a href="#" data-nav="logout" class="button">Logout</a>
+        </div>
+        </header>
+
                         <h1>Welcome to the Real-Time Forum</h1>
                         <p>This is the home page.</p>
                         <a href="#" data-nav="post">Create Post</a> | <a href="#" data-nav="logout">Logout</a>
@@ -49,6 +65,7 @@ function loadPageContent(page) {
                 </div>
             `;
         }
+        //------------
     } else if (page === 'login') {
         app.innerHTML = `
             <h1>Login</h1>

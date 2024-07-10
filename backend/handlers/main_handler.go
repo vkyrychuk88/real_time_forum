@@ -1,3 +1,4 @@
+
 //real-time-forum/backend/handlers/main_handler.go
 
 // This file will contain the handler for the main route.

@@ -12,6 +12,7 @@ import (
 type Post struct {
 	ID        int       `json:"id"`
 	UserID    int       `json:"userId"`
+	Nickname  string    `json:"nickname"`
 	Title     string    `json:"title"`
 	Content   string    `json:"content"`
 	CreatedAt time.Time `json:"createdAt"`
@@ -19,20 +20,20 @@ type Post struct {
 
 func CreatePost(db *sql.DB, post Post) error {
 	stmt, err := db.Prepare(`
-        INSERT INTO posts (userId, title, content, createdAt)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO posts (userId, nickname, title, content, createdAt)
+        VALUES (?, ?, ?, ?, ?)
     `)
 	if err != nil {
 		return err
 	}
 	defer stmt.Close()
 
-	_, err = stmt.Exec(post.UserID, post.Title, post.Content, time.Now())
+	_, err = stmt.Exec(post.UserID, post.Nickname, post.Title, post.Content, time.Now())
 	return err
 }
 
 func GetPosts(db *sql.DB) ([]Post, error) {
-	rows, err := db.Query("SELECT id, userId, title, content, createdAt FROM posts ORDER BY createdAt DESC")
+	rows, err := db.Query("SELECT id, userId, nickname, title, content, createdAt FROM posts ORDER BY createdAt DESC")
 	if err != nil {
 		return nil, err
 	}
@@ -41,7 +42,7 @@ func GetPosts(db *sql.DB) ([]Post, error) {
 	var posts []Post
 	for rows.Next() {
 		var post Post
-		err := rows.Scan(&post.ID, &post.UserID, &post.Title, &post.Content, &post.CreatedAt)
+		err := rows.Scan(&post.ID, &post.UserID, &post.Nickname, &post.Title, &post.Content, &post.CreatedAt)
 		if err != nil {
 			return nil, err
 		}

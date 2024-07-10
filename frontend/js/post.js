@@ -35,7 +35,7 @@ export function displayPosts(posts) {
             postDiv.innerHTML = `
                 <h2>${post.title}</h2>
                 <p>${post.content}</p>
-                <small>Posted by User ${post.userId} on ${new Date(post.createdAt).toLocaleString()}</small>
+                <small>Posted by User ${post.userId} - ${post.nickname} on ${new Date(post.createdAt).toLocaleString()}</small>
             `;
             postsDiv.appendChild(postDiv);
         });

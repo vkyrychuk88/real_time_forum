@@ -1,7 +1,7 @@
 // real-time-forum/frontend/js/websocket.js
 
 export function initWebSocket() {
-    const socket = new WebSocket('ws://localhost:8080/ws');
+    const socket = new WebSocket('ws://localhost:8070/ws');
     
     socket.onopen = () => console.log('WebSocket is connected.');
     socket.onmessage = (event) => handleMessage(event);

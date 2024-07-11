@@ -1,18 +1,26 @@
 /* real-time-forum/frontend/css/styles.css */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #796fe9;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 #app {
-    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
     margin: 0 auto;
     padding: 20px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /*height: 100vh;  Add this line if you want vertical centering to take the full height of the viewport */
 }
 
 /* Additional styling for forms and links */
@@ -31,16 +39,11 @@ h1,  p, input  {
 
 /* CSS */
 .content-box {
-    width: 50%; /* Adjust based on preference */
+    width: 400px;
     padding: 20px;
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    background-color: #f0d71c; /* Adjust background color as needed */
+    background: rgb(212, 212, 212);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .content-box h1, .content-box p {
@@ -124,35 +127,116 @@ a:hover {
 .topnav .logo h1 {
     margin: 0;
     color: #e06060;
-  }
+}
   
-  .topnav .user-actions .button {
+.topnav .user-actions .button {
     margin-right: 10px; /* Adds space to the right of each button */
-  }
+}
   
-  .topnav .user-actions .button:last-child {
+.topnav .user-actions .button:last-child {
     margin-right: 0; /* Removes space for the last button */
 }
 
 .user-actions {
     display: flex;
     align-items: center;
-  }
+}
   
-  .username {
+
+
+.username {
     color: #e41010;
     margin-right: 15px;
-  }
+}
 
-  .button {
+.button {
     background-color: #4CAF50;
     color: white;
     padding: 8px 16px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-  }
+}
   
-  .button:hover {
+.button:hover {
     background-color: #45a049;
-  }
+}
+
+.post {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #45a049;
+    transition: transform 0.2s ease-in-out;
+}
+
+.post-category {
+    color: #45a049;
+    margin: 10px;
+    font-weight: 600;
+}
+
+.post-interactions {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.sidebar {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: fit-content;
+}
+
+/* Existing CSS for initial 3-line display */
+/*.post-content, .p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    cursor: pointer; /* Optional: Changes the cursor on hover to indicate it's clickable */
+
+
+.post-content {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+/* New CSS class for expanded view */
+.expanded {
+    -webkit-line-clamp: none;
+    display: block;
+}
+
+.read-more {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}

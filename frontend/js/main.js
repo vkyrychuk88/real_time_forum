@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.querySelectorAll('.post-content, .p').forEach(element => {
+    element.addEventListener('click', function() {
+        this.classList.toggle('expanded');
+    });
+});
+
 window.navigate = function(page) {
     history.pushState({}, '', '/');
     console.log(`Navigating to ${page}`);

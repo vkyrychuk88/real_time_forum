@@ -1,12 +1,13 @@
 package main
 
 import (
+	"database/sql"
 	"log"
 	"net/http"
 	"path/filepath"
-	"database/sql"
 	"real-time-forum/backend/handlers"
 	"real-time-forum/backend/middleware"
+
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -37,8 +38,7 @@ func main() {
 			fs.ServeHTTP(w, r)
 		}
 	})
-	
 
-	log.Println("Server started on :8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Println("Server started on :8070")
+	log.Fatal(http.ListenAndServe(":8070", nil))
 }

@@ -43,10 +43,10 @@ function loadPageContent(page) {
                  <a href="#" data-nav="logout" class="button">Logout</a>
         </div>
         </header>
-
-                        <h1>Welcome to the Real-Time Forum</h1>
-                        <p>This is the home page.</p>
-                        <a href="#" data-nav="post">Create Post</a> | <a href="#" data-nav="logout">Logout</a>
+            <div class="sidebar">
+             <h1>Welcome to the Real-TIME-Forum</h1>
+            </div>
+                        
                                 
                         <div id="posts"></div>
                     `;

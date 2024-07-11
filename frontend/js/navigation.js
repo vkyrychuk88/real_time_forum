@@ -66,6 +66,7 @@ function loadPageContent(page) {
             `;
         }
         //------------
+        //---
     } else if (page === 'login') {
         app.innerHTML = `
             <h1>Login</h1>

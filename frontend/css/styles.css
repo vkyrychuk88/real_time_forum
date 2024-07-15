@@ -202,15 +202,6 @@ a:hover {
     height: fit-content;
 }
 
-/* Existing CSS for initial 3-line display */
-/*.post-content, .p {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: left;
-    cursor: pointer; /* Optional: Changes the cursor on hover to indicate it's clickable */
 
 
 .post-content {

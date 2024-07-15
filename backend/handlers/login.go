@@ -27,7 +27,7 @@ func LoginHandler(db *sql.DB) http.HandlerFunc {
 			http.Error(w, "Invalid credentials", http.StatusUnauthorized)
 			return
 		}
-
+		//-----------------------------------------------------------
 		utils.SetUserSession(w, r, user.ID)
 		log.Println("User logged in:", user.ID)
 		w.WriteHeader(http.StatusOK)

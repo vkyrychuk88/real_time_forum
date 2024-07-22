@@ -65,13 +65,7 @@ export function displayPosts(posts) {
                 this.textContent = this.textContent === 'Read More' ? 'Read Less' : 'Read More';
             });
 
-            // document.querySelectorAll('.post-content, .p').forEach(element => {
-            //     element.addEventListener('click', function() {
-            //         this.classList.toggle('expanded');
-            //     });
-            // });
-
-            //<button id="${toggleId}" class="read-more">Read More</button>
+           
         });
     }
 }

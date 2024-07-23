@@ -38,7 +38,7 @@ func main() {
 			fs.ServeHTTP(w, r)
 		}
 	})
-
+	//-----------------------------------------------------------
 	log.Println("Server started on :8070")
 	log.Fatal(http.ListenAndServe(":8070", nil))
 }

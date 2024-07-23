@@ -28,6 +28,7 @@ func LoginHandler(db *sql.DB) http.HandlerFunc {
 			return
 		}
 		//-----------------------------------------------------------
+		//-----------------------------------------------------------
 		utils.SetUserSession(w, r, user.ID)
 		log.Println("User logged in:", user.ID)
 		w.WriteHeader(http.StatusOK)

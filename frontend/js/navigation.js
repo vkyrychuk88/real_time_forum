@@ -23,33 +23,84 @@ function loadPageContent(page) {
     
     console.log('esli true to zalogineni:', isLoggedIn);
 
-    const user = {
-        username: "User's_Username:_Volodymyr",
-        nickname: "User's_Nickname:_VOLODYMYR",
-    };
+    // const user = {
+    //     username: "User's_Username:_Volodymyr",
+    //     nickname: "User's_Nickname:_VOLODYMYR",
+    // };
+
+    //<span class="username">Hello, ${posts[1].nickname} - ${user.username}-${user.nickname} {{.User.Username}}-{{.users.Nickname}}</span>
+                            
 
     if (page === 'home') {
         if (isLoggedIn) {
             fetchPosts()
                 .then(posts => {
                     app.innerHTML = `
-        <header class="topnav">
-        <div class="logo">
-             <h1>Welcome to the Real-TIME-Forum</h1>
-        </div>
-        <div class="user-actions">
-                 <span class="username">Hello, ${posts[1].nickname} - ${user.username}-${user.nickname} {{.User.Username}}-{{.users.Nickname}}</span>
-                 <a href="#" data-nav="post" class="button">Create Post</a>
-                 <a href="#" data-nav="logout" class="button">Logout</a>
-        </div>
-        </header>
-            <div class="sidebar">
-             <h1>Welcome to the Real-TIME-Forum</h1>
-            </div>
+                    <header class="topnav">
+                    <div class="logo">
+                        <h1>Welcome to the Real-TIME-Forum</h1>
+                    </div>
+                    <div class="user-actions">
+                            <span class="username">Hello, ${posts[1].nickname}</span>
+                            
+                            <a href="#" data-nav="logout" class="button">Logout</a>
+                    </div>
+                    </header>
+
+                    <div class="container">
+
+                    <div class="main-content">
+                    <div id="posts"></div>
+                    </div>
+   
+
+
+                        <aside class="sidebar">
+                        <div class="create-post-container"> 
+                         <a href="#" data-nav="post" class="create-button">Create Post</a>
+                        </div>
+                        <div class="filter-form-container">
+                         <form action="/filter" method="POST" class="user-filter-form">
+                          <div class="filter-option">
+                           <input type="radio" name="filter" id="filter-all" value="all" checked>
+                           <label for="filter-all">All</label>
+                          </div>
+                          <div class="filter-option">
+                           <input type="radio" name="filter" id="filter-liked" value="liked-post">
+                           <label for="filter-liked">Liked post</label>
+                          </div>
+                          <div class="filter-option">
+                           <input type="radio" name="filter" id="filter-created" value="created-posts">
+                           <label for="filter-created">Created post</label>
+                          </div>
+                          <div class="filter-option">
+                           <input type="radio" name="filter" value="category">
+                           <label>
+                           "Categories "
+                            <select name="category">
+                             option value="animals-all">Animals-all</option>
+                             <option value="animals-dog">Animals-dog</option>
+                             <option value="animals-cat">Animals-cat</option>
+                             <option value="animals-bird">Animals-bird</option>
+                             <option value="art-all">art-all</option>
+                             <option value="art-digital">art-digital</option>
+                           </label>
+                          </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                          <button type="submit" class="filter-button">Apply User Filter</button>
+                          <a href="#" data-nav="post-------" class="create-button">Apply User Filter</a>
                         
-                                
-                        <div id="posts"></div>
-                    `;
+                        <div class="create-post-container"> 
+                         <a href="#" data-nav="post" class="create-button">Create Post</a>
+                        </div>
+
+                         </form>
+                        </div>
+                        <h1>Welcome to the Real-TIME-Forum</h1>
+                        </aside>            
+
+
+                        </div>       `;
                     displayPosts(posts);
                 })
                 .catch(error => {

@@ -90,12 +90,35 @@ function loadPageContent(page) {
                          </form>
                         </div>
                         
+ 
 
                         </aside> 
                         
-                    
+    <div class="chat-container">
+    <div class="chat-input">
+        <input type="text" id="chat-input-field" placeholder="Type your message...">  
+    </div>
+    </div>
                         
-                        </div>       `;
+                        </div> 
+
+
+
+   <div class="chat-container">
+    <div class="chat-header">
+        <h2>Live Chat</h2>
+    </div>
+    <div class="chat-messages">
+        <!-- Chat messages will be dynamically inserted here -->
+    </div>
+    <div class="chat-input">
+        <input type="text" id="chat-input-field" placeholder="Type your message...">
+        <button id="send-button">Send </button>
+    </div>
+    </div>
+                        
+                        
+                        `;
                     displayPosts(posts);
                 })
                 .catch(error => {

@@ -58,6 +58,7 @@ function loadPageContent(page) {
                         <aside class="sidebar">
                         <div class="create-post-container"> 
                          <a href="#" data-nav="post" class="create-button">Create Post</a>
+                         <a href="#" data-nav="post-------" class="filter-button">Apply User Filter</a>
                         </div>
                         <div class="filter-form-container">
                          <form action="/filter" method="POST" class="user-filter-form">
@@ -86,20 +87,14 @@ function loadPageContent(page) {
                              <option value="art-digital">art-digital</option>
                            </label>
                           </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                          <button type="submit" class="filter-button">Apply User Filter</button>
-                          <a href="#" data-nav="post-------" class="create-button">Apply User Filter</a>
-                        
-                        <div class="create-post-container"> 
-                         <a href="#" data-nav="post" class="create-button">Create Post</a>
-                        </div>
-
                          </form>
                         </div>
-                        <h1>Welcome to the Real-TIME-Forum</h1>
-                        </aside>            
+                        
 
-
+                        </aside> 
+                        
+                    
+                        
                         </div>       `;
                     displayPosts(posts);
                 })

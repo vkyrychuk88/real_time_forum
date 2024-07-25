@@ -96,7 +96,8 @@ function loadPageContent(page) {
                         
     <div class="chat-container">
     <div class="chat-input">
-        <input type="text" id="chat-input-field" placeholder="Type your message...">  
+        <input type="text" class="invisible-input" id="chat-input-field" placeholder="Type your message..."> 
+        <input type="radio" name="filter" value="category" id="category-radio" class="invisible-input"> 
     </div>
     </div>
                         

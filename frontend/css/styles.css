@@ -24,6 +24,7 @@ body {
 }
 
 form  {
+    width: 400px;
     text-align: center;
     padding: 10px;
     border: 1px solid #ddd;
@@ -36,10 +37,11 @@ h1,  p, input  {
 }
 /* CSS */
 .content-box {
-    width: 400px;
+    width: 420px;
     padding: 20px;
+    margin: 20px;
     border-radius: 10px;
-    background: rgb(212, 212, 212);
+    background: rgb(139, 231, 182);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -64,13 +66,14 @@ h1,  p, input  {
 }
 
 input {
+    
     margin: 5px 0; /* Add some space between input fields */
     /* Keep your existing input styles */
 }
 
 form input, form textarea {
     display: block;
-    width: 200px;
+    width: 380px;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -318,7 +321,7 @@ input[type="radio"] {
 
 .chat-header {
     padding: 10px;
-    background-color: #007bff;
+    background-color: #2dd341;
     color: #fff;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -350,11 +353,22 @@ input[type="radio"] {
     padding: 5px 10px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: #159d4a;
     color: #fff;
     cursor: pointer;
 }
 
 .chat-input button:hover {
-    background-color: #0056b3;
+    background-color: #22ee1f;
+}
+
+.invisible-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }

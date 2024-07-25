@@ -77,14 +77,15 @@ function loadPageContent(page) {
                           <div class="filter-option">
                            <input type="radio" name="filter" value="category">
                            <label>
-                           "Categories "
+                           Categories :
                             <select name="category">
-                             option value="animals-all">Animals-all</option>
+                             <option value="animals-all">Animals-all</option>
                              <option value="animals-dog">Animals-dog</option>
                              <option value="animals-cat">Animals-cat</option>
                              <option value="animals-bird">Animals-bird</option>
                              <option value="art-all">art-all</option>
                              <option value="art-digital">art-digital</option>
+                            </select>
                            </label>
                           </div>
                          </form>
@@ -105,18 +106,24 @@ function loadPageContent(page) {
 
 
 
-   <div class="chat-container">
+<div class="chat-container">
     <div class="chat-header">
         <h2>Live Chat</h2>
+    </div>
+    <div class="chat-users">
+        <h3>Users</h3>
+        <ul id="user-list">
+            <!-- User list items will be dynamically inserted here -->
+        </ul>
     </div>
     <div class="chat-messages">
         <!-- Chat messages will be dynamically inserted here -->
     </div>
     <div class="chat-input">
         <input type="text" id="chat-input-field" placeholder="Type your message...">
-        <button id="send-button">Send </button>
+        <button id="send-button">Send</button>
     </div>
-    </div>
+</div>
                         
                         
                         `;
@@ -188,11 +195,23 @@ function loadPageContent(page) {
         }
         app.innerHTML = `
             <h1>Create Post</h1>
-            <form id="post-form">
+            <form class="form-post" id="post-form">
                 <input type="text" name="title" placeholder="Title" required><br>
+                <label>
+                           Categories: <br>
+                            <select name="category">
+                             <option value="animals-all">Animals-all</option>
+                             <option value="animals-dog">Animals-dog</option>
+                             <option value="animals-cat">Animals-cat</option>
+                             <option value="animals-bird">Animals-bird</option>
+                             <option value="art-all">art-all</option>
+                             <option value="art-digital">art-digital</option>
+                            </select>
+                </label>
+                <br><br>
                 <textarea name="content" placeholder="Content" required></textarea><br>
                 <button type="submit">Submit</button>
-                </br></br><button data-nav="home">Home</button>
+                <br><br><button data-nav="home">Home</button>
             </form>
         `;
         setupPost();

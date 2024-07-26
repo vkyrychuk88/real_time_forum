@@ -20,7 +20,7 @@ export function setupPost() {
                 console.error('Error submitting post:', error);
             });
     });
-    
+    //----
 }
 
 export function displayPosts(posts) {
@@ -38,7 +38,7 @@ export function displayPosts(posts) {
 
             postDiv.innerHTML = `
                 <h2>${post.title}</h2>
-        <p class="post-content" id="${postId}">${post.content}</p> <!-- Set the ID here -->
+                <p class="post-content" id="${postId}">${post.content}</p> <!-- Set the ID here -->
                 <button id="${toggleId}" class="read-more">Read More</button>
                 <small>Posted by User ${post.userId} - ${post.nickname} on ${new Date(post.createdAt).toLocaleString()}</small>
             `;

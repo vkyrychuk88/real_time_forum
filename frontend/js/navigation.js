@@ -142,8 +142,7 @@ function loadPageContent(page) {
                 </div>
             `;
         }
-        //------------
-        //---
+       
     } else if (page === 'login') {
         app.innerHTML = `
             <h1>Login</h1>
